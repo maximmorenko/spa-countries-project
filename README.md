@@ -15,3 +15,12 @@ https://www.frontendmentor.io/
 
 # Задали стили согласно style-guide.md
 
+# Контейнер, Хедер и установка реакт-айконс
+npm i react-icons
+1. по заданию нужно использовать иконки Ionicons 5. сайт с иконками:
+https://react-icons.github.io/react-icons/icons?name=io5
+
+# Шапка
+
+# Смена темы
+
