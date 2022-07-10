@@ -1,13 +1,56 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* подключим номалиозацию стилей от криейт реакт таб */
+@import-normalize;
+/* импортируем гугл шрифт */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+/* заведем переменные в руте, значения берем в стаил-гайде*/
+:root {
+  /* Typography */
+  --family: 'Nunito Sans', sans-serif;
+/* размер */
+  --fs-sm: 14px;
+  --fs-md: 16px;
+/* насыщенность */
+  --fw-light: 300;
+  --fw-normal: 600;
+  --fw-bold: 800;
+
+  /* Other */
+  /* бордер радиус */
+  --radii: 0.5rem;
+}
+
+/* сбрасываем у боди маржин */
+body {
+  margin: 0;
+  /* используем переменные ранее созданые */
+  font-family: var(--family);
+  /* основной цвет */
+  color: var(--colors-text);
+  font-weight: var(--fw-light);
+  background-color: var(--colors-bg);
+}
+
+/* на боди мы будем вешать дата атрибут который будет отвечать за цвет */
+/* стили для дата атрибута (дата-тема). значения также берем из гайда*/
+/* если дата атрибут равен дарк, то набор стилей вот такой: */
+body[data-theme='dark'] {
+  --colors-text: hsl(0, 0%, 100%);
+  --colors-bg: hsl(207, 26%, 17%);
+  --colors-ui-base: hsl(209, 23%, 22%);
+
+  --shadow: rgba(245, 245, 245, 0.2) 0 0 8px;
+}
+
+/* если дата атрибут равен лайт, то набор стилей вот такой: */
+body[data-theme='light'] {
+  --colors-text: hsl(200, 15%, 8%);
+  --colors-bg: hsl(0, 0%, 98%);
+  --colors-ui-base: hsl(0, 0%, 100%);
+
+  --shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

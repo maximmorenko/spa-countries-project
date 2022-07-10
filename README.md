@@ -4,6 +4,14 @@
 npx create-react-app . (установит в текущую папку)
 
 # Установка react-router-dom, styled-components и axios
+Axios – это библиотека с открытым исходным кодом, позволяющая делать HTTP-запросы
 1. npm i styled-components
 2. npm i react-router-dom
 3. npm i axios
+# Скопировал внешний вил приложения (папка design)
+
+# Создал файл руководство по стилям (style-guide.md)
+https://www.frontendmentor.io/
+
+# Задали стили согласно style-guide.md
+
