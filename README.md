@@ -24,3 +24,12 @@ https://react-icons.github.io/react-icons/icons?name=io5
 
 # Смена темы
 
+# Создание формы
+1. форма состоит из двух елементов поиска и селекта
+2. установим реакт селект
+3. для формы создадим три компонента (controls для контроля, search для поиска, customSelect)
+
+# Установка реакт селект https://react-select.com/home
+npm i --save react-select
+
+# Реализация селект и поиск в мейне
