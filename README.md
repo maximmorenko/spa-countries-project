@@ -1,4 +1,7 @@
 # spa-countries-project - небольшой сервис со списком стран из api c поиском и фильтрацией ним. Также есть возможность выбора темы (светлой или темной)
+
+# ТЗ https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca
+
 Помимо React и react-router-dom используется библиотека styled-components.
 # Установка и очистка react.
 npx create-react-app . (установит в текущую папку)
@@ -33,3 +36,9 @@ https://react-icons.github.io/react-icons/icons?name=io5
 npm i --save react-select
 
 # Реализация селект и поиск в мейне
+
+# API https://restcountries.com/
+
+# создаем config.js для ссылки API
+
+# для реализации списка стран создадим два компонента со списком и карточкой
