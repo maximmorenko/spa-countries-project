@@ -1,6 +1,6 @@
 const BASE_URL = 'https://restcountries.com/v2/';
 
-export const ALL_CONTRIES = BASE_URL + 'all?fields=name,capital,flags,population,region';
+export const ALL_COUNTRIES = BASE_URL + 'all?fields=name,capital,flags,population,region';
 // перенастроим ссылку all на ссылку с конкретными полями, перечислим через запятую
 // ?fields=name,capital,flags,population,region
 

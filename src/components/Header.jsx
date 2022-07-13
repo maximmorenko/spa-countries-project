@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { Container } from './Container';
 import {IoMoon, IoMoonOutline} from 'react-icons/io5'
+import { Link } from 'react-router-dom';
 
 // у хедера будет несколько частей. 
 // поэтому лечше создавать отдельную папку для хедера и его частей (компонентов)
@@ -21,9 +22,10 @@ const Wrapper = styled.div`
 `;
 
 // тайтл - ссылка, ведет на главную
-const Title = styled.a.attrs({
+// заменим ссылку на линк из реакт дома и чреф на ту
+const Title = styled(Link).attrs({
     // задаем атрибут
-    href: '/',
+    to: '/',
     })`
     color: var(--colors-text);
     font-size: var(--fs-sm);
