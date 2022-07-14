@@ -30,12 +30,16 @@ export const Controls = ({ onSearch }) => {
   // создадим стейт для смены регеона
   const [region, setRegion] = useState('');
 
-//   useEffect(() => {
-//     const regionValue = region?.value || '';
-//     onSearch(search, regionValue);
+  useEffect(() => {
+    // подготовим данные для регина (так как в исходном жейсоне есть lable и value бедем использовать value если оно есть, если нет то
+    // передаем пустую строку)
+    const regionValue = region?.value || '';
+    // вызываем полученую функцию передаем внее полученую строку если есть и регион
+    onSearch(search, regionValue);
 
-//     // eslint-disable-next-line
-//   }, [search, region]);
+    // зависимостью будут строка поиска и регион
+    // eslint-disable-next-line
+  }, [search, region]);
 
   return (
     <Wrapper>

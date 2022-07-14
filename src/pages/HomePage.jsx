@@ -2,7 +2,7 @@ import React from 'react';
 // импортируем axios 
 // Axios – это библиотека с открытым исходным кодом, позволяющая делать HTTP-запросы
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { List } from '../components/List';
@@ -12,12 +12,30 @@ import { ALL_COUNTRIES } from '../config';
 
 export const HomePage = ({countries, setCountries}) => {
 
-   // создадим стейт списка стран по умолчанию пустой массив
-  // const [countries, setCountries] = useState([]);
-  // console.log(countries);
+    // создадим стейт фильтрованного списка стран по умолчанию бедет полный массив countries
+    const [filteredCountries, setFilteredCountries] = useState(countries);
+    // console.log(countries);
 
-  // Достаем из юз хистори метод пуш, он позволит нам переходить на разные страницы
-  // const {name} = useParams;
+    // создадим функцию поиска
+    const handleSearch = (search, region) => {
+        // на входе ожидаем два параметра по поиску. название страниы в поисковой страке и регион в селекте
+        // создадим переменную с данными (спредом развернем в нее все страны)
+        let data = [...countries];
+        // дальше последовательно проверяем
+        if (region) {
+            // если есть регион, то делаем фильтрацию по региону, проверяем по всем странам их регионы, совпадают ли они с текущим (выбраным)
+            data = data.filter(c => c.region.includes(region))
+        }
+
+        if (search) {
+            // если есть поисковое слово, то делаем фильтрацию по слову, 
+            // проверяем по всем странам их название, совпадают ли они с текущим (выбраным)
+            // также название страны в массиве и введенное слово в поиске приводим к нижнему регистру
+            data = data.filter(c => c.name.toLowerCase().includes(search.toLowerCase()))
+        }
+        // записываем усеченный массив стран в стейт
+        setFilteredCountries(data);
+    };  
 
 
   useEffect(() => {
@@ -35,11 +53,13 @@ export const HomePage = ({countries, setCountries}) => {
 
     return (
         <>
-        <Controls/>
+        {/* в контролях при поиске вызвваем функцию фильтрации handleSearch
+        и передаем ее в компонент контроли*/}
+        <Controls onSearch={handleSearch}/>
         <List>
         {/* пробежимся п массиву countries и отрисуем для каждой страны карточку */}
         {/* подготовим объект с инфо о стране с нужными пропами */}
-        {countries.map((c) => {
+        {filteredCountries.map((c) => {
           const countryInfo = {
                 img: c.flags.png,
                 name: c.name,

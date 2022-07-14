@@ -1,11 +1,36 @@
-import React from 'react';
-import { Params, useParams } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+// для стейта карточки детали импортируем юзстейт и юзэффект
+// импортируем функцию получения дет. инфо из конфиг
+import { filterByCode } from '../config';
+// для иконки (стрелка назад) мипортируем реакт айконс
+import {IoArrowBack} from 'react-icons/io5'
+
+
 
 function Details() {
 
-    const {name} = useParams();    // сделаем проверку, в пропы достанем объект mutch
+    // const {code, setCode} = useState('');
+
+    useEffect(() => {}, []);
+
+    const {name} = useParams();    // достанем имя из юзпарамс
+
+    // у функции навигейт два параметра перевый это куда а второй опции первоготпараметра
+    const navigate = useNavigate();
+    // создадим функцию назад, и результатом ее будет вызов функции навигейт с параметром пути
+    // в параметры можно добавить путь конкретный (./) тогда она будет работать как линк, 
+    // а можно исполььзовать цифрф (-1 означает вернуться на одну страницу назад), (1 означает перейти на следующую страницу)
+    const goBack = () => navigate(-1)
+
     return (
         <div>
+            <button 
+            onClick={goBack}
+            >
+                {IoArrowBack} Back
+            </button>
             Details {name}
         </div>
     );
