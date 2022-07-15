@@ -23,10 +23,10 @@ function App() {
       {/* импорт чилдренов добавляется автоматически */}
       <Routes>
         {/* у роута два атрибута путь и компонент страница с разметкой*/}
-        <Route path='/' element={<HomePage countries={countries} setCountries={setCountries} />}/>
-        {/* путь на страницу */}
+        <Route path='/' element={
+          <HomePage countries={countries} setCountries={setCountries}/>
+        }/>
         <Route path='/country/:name' element={<Details/>}/>
-        {/* если страница не найдена то путь универсальный "*" отрисовываем страницу с нот фаунд */}
         <Route  path='*' element={<NotFound/>}/>
       </Routes>
     </Main>

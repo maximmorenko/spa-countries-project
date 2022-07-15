@@ -24,32 +24,43 @@ export const HomePage = ({countries, setCountries}) => {
         // дальше последовательно проверяем
         if (region) {
             // если есть регион, то делаем фильтрацию по региону, проверяем по всем странам их регионы, совпадают ли они с текущим (выбраным)
-            data = data.filter(c => c.region.includes(region))
+            data = data.filter((c) => c.region.includes(region));
         }
 
         if (search) {
             // если есть поисковое слово, то делаем фильтрацию по слову, 
             // проверяем по всем странам их название, совпадают ли они с текущим (выбраным)
             // также название страны в массиве и введенное слово в поиске приводим к нижнему регистру
-            data = data.filter(c => c.name.toLowerCase().includes(search.toLowerCase()))
+            data = data.filter((c) => c.name.toLowerCase().includes(search.toLowerCase()))
         }
         // записываем усеченный массив стран в стейт
         setFilteredCountries(data);
     };  
+    
 
+//   useEffect(() => {
+//     // делаем запрос через аксиос мотодом гет на конкретную ссылку (ссылку импортируем из конфиг)
+//     // также сделаем проверку на случай пустого массива кантрис, для того чтобы юзэффект заново не загружал массив если он уже есть
+//     if (!countries.length) // если длины нет то делаем запрос
+//         axios.get(ALL_COUNTRIES)
+//         .then(
+//         // на входи получаем дата. сразу деструктурируем их и передаем в setCountries на выходе
+//         ({data}) => setCountries(data)
+//         )
+  
+//     }, [countries.length, setCountries])
+//     // полученые страны передаим в список
+useEffect(() => {
+    if (!countries.length)
+      axios.get(ALL_COUNTRIES).then(({ data }) => setCountries(data));
+    // eslint-disable-next-line
+  }, []);
 
   useEffect(() => {
-    // делаем запрос через аксиос мотодом гет на конкретную ссылку (ссылку импортируем из конфиг)
-    // также сделаем проверку на случай пустого массива кантрис, для того чтобы юзэффект заново не загружал массив если он уже есть
-    if (!countries.length) // если длины нет то делаем запрос
-        axios.get(ALL_COUNTRIES)
-        .then(
-        // на входи получаем дата. сразу деструктурируем их и передаем в setCountries на выходе
-        ({data}) => setCountries(data)
-        )
-  
-    }, [countries.length, setCountries])
-    // полученые страны передаим в список
+    handleSearch();
+    // eslint-disable-next-line
+  }, [countries]);
+
 
     return (
         <>
