@@ -57,3 +57,13 @@ npm i --save react-select
 3. импортируем функцию получения дет. инфо из конфиг
 4. для иконки (стрелка назад) мипортируем реакт айконс, также импортируем useNavigate
 
+# публикация проекта
+1. добавлеем поле в корневой объект файла package.json "homepage": "https://maximmorenko.github.io/spa-countries-project";
+2. добавлеем в поле 'script' корневого объекта в файле package.json "predeploy": "npm run build", "deploy": "gh-pages -d build"
+3. Для того чтобы роутинг работал мы должны у компонента BrowserRouter добавить атрибут baseName='' и указать ему значение (путь нашей главной страницы) /spa-countries-project
+4. если есть ключи то переносим их с енв локал на гитхаб в секреты (настройки проекта => новый секрет)
+5. устанавливаем npm install gh-pages -D (-D это то же самое что и --save-dev)
+6. сохраняем изменения git add -A
+7. запускаем диплой npm run deploy
+8. ссылка на проект https://maximmorenko.github.io/spa-countries-project
+
