@@ -91,7 +91,7 @@ useEffect(() => {
             };
 
             return (
-                <Link key={c.name} to={`/country/${c.name}`}>
+                <Link className='link' key={c.name} to={`/country/${c.name}`}>
                     <Card key={c.name} {...countryInfo}/>
                 </Link>
             );

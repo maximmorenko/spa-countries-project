@@ -7,6 +7,7 @@ import { searchByCountry } from '../config';
 // для иконки (стрелка назад) мипортируем реакт айконс
 import {IoArrowBack} from 'react-icons/io5'
 import { Button } from '../components/Button';
+import { Info } from '../components/Info';
 
 
 
@@ -15,7 +16,7 @@ function Details() {
     // создадим стейт карточки, по умолчанию пустой
     const [country, setCountry] = useState(null);
     
-    console.log(country);
+    //console.log(country);
 
     useEffect(() => {
         axios.get(searchByCountry(name)).then(({ data }) => setCountry(data[0]));
@@ -34,7 +35,7 @@ function Details() {
             <Button onClick={goBack}>
                 <IoArrowBack /> Back
             </Button>
-            Details {name}
+            {country && <Info {...country} />}
         </div>
     );
 }
