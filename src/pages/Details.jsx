@@ -6,6 +6,7 @@ import axios from 'axios';
 import { searchByCountry } from '../config';
 // для иконки (стрелка назад) мипортируем реакт айконс
 import {IoArrowBack} from 'react-icons/io5'
+import { Button } from '../components/Button';
 
 
 
@@ -30,9 +31,9 @@ function Details() {
 
     return (
         <div>
-            <button onClick={goBack}>
+            <Button onClick={goBack}>
                 <IoArrowBack /> Back
-            </button>
+            </Button>
             Details {name}
         </div>
     );
