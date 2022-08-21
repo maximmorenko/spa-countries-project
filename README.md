@@ -1,6 +1,8 @@
-# spa-countries-project - небольшой сервис со списком стран из api c поиском и фильтрацией ним. Также есть возможность выбора темы (светлой или темной)
+## [spa-countries-project DEMO](https://maximmorenko.github.io/spa-countries-project)
 
-# ТЗ https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca
+## небольшой сервис со списком стран из api c поиском и фильтрацией ним. Также есть возможность выбора темы (светлой или темной)
+
+## [countries-project ТЗ](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 
 Помимо React и react-router-dom используется библиотека styled-components.
 # Установка и очистка react.
@@ -65,5 +67,3 @@ npm i --save react-select
 5. устанавливаем npm install gh-pages -D (-D это то же самое что и --save-dev)
 6. сохраняем изменения git add -A
 7. запускаем диплой npm run deploy
-8. ссылка на проект https://maximmorenko.github.io/spa-countries-project
-
