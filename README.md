@@ -4,6 +4,8 @@
 
 ## [countries-project ТЗ](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 
+![](https://github.com/maximmorenko/spa-countries-project/blob/master/design/screen.jpg)
+
 Помимо React и react-router-dom используется библиотека styled-components.
 # Установка и очистка react.
 npx create-react-app . (установит в текущую папку)
